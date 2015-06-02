@@ -51,3 +51,5 @@ package { "dpatch": ensure=>latest }
 package { "libwrap0-dev": ensure=>latest }
 package { "libdbd-mysql-perl": ensure=>latest }
 package { "libtest-unit-perl": ensure=>latest }
+
+package { "eatmydata": ensure=>latest }
