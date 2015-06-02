@@ -2,8 +2,8 @@ include apt
 
 #This key is at http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key
 apt::key { 'jenkins':
-	 key => 'D50582E6',
-	 key_source => 'http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key',
+	 id => 'D50582E6',
+	 source => 'http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key',
 }
 
 apt::source { 'jenkins':
@@ -14,7 +14,6 @@ apt::source { 'jenkins':
 	    	    Apt::Key['jenkins'],
 		    Package['openjdk-7-jre-headless'],
 		    ],
-	    include_src => false,
 }
 
 package { 'openjdk-7-jre-headless':
@@ -41,7 +40,6 @@ package { "g++": ensure => latest }
 package {"libaio-dev": ensure => latest}
 package {"zlib1g-dev": ensure => latest}
 package {"libncurses-dev": ensure=>latest}
-package { "perl-Time-HiRes": ensure=>latest }
 package { "mysql-client": ensure=>latest }
 package { "python-mysqldb": ensure=>latest }
 
