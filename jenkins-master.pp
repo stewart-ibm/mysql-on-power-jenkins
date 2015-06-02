@@ -1,10 +1,5 @@
 include apt
 
-file { '/etc/motd':
-	content=>	"MySQL On POWER Jenkins Master.\n"
-			"Managed by puppet.\n"
-}
-
 #This key is at http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key
 apt::key { 'jenkins':
 	 key => 'D50582E6',
@@ -45,7 +40,6 @@ package { "gcc": ensure => latest }
 package { "g++": ensure => latest }
 package {"libaio-dev": ensure => latest}
 package {"zlib1g-dev": ensure => latest}
-package {"libncurses-dev": ensure=>latest}
 package {"libncurses-dev": ensure=>latest}
 package { "perl-Time-HiRes": ensure=>latest }
 package { "mysql-client": ensure=>latest }
